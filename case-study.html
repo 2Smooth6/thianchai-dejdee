@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Sales Performance Dashboard - THIANCHAI DEJDEE Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .case-study-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 4rem 0;
+            margin-top: 80px;
+            margin-bottom: 3rem;
+        }
+
+        .case-study-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .case-study-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .case-study-content h2 {
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .case-study-content h3 {
+            margin: 2rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .case-study-content p {
+            margin-bottom: 1rem;
+        }
+
+        .case-study-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .case-study-image {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 2rem 0;
+            text-align: center;
+            color: var(--color-accent);
+            font-size: 4rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            transition: all var(--transition-fast);
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">THIANCHAI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Case Study Content -->
+    <div class="case-study-header">
+        <div class="case-study-container">
+            <a href="index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Projects
+            </a>
+            <h1 class="page-title">Sales Performance Dashboard</h1>
+            <p class="page-subtitle">Revenue trends analysis and sales forecasting with predictive modeling</p>
+        </div>
+    </div>
+
+    <div class="case-study-container">
+        <div class="case-study-content">
+            <!-- Overview -->
+            <h2>Project Overview</h2>
+            <p>
+                The Sales Performance Dashboard is a comprehensive analytics solution designed to track, analyze, and forecast revenue trends across multiple business dimensions. This project demonstrates advanced data analysis, predictive modeling, and business intelligence capabilities.
+            </p>
+
+            <!-- Challenge -->
+            <h2>The Challenge</h2>
+            <p>
+                The organization faced several critical challenges in sales management:
+            </p>
+            <ul>
+                <li>Lack of real-time sales visibility across departments</li>
+                <li>Difficulty in forecasting quarterly revenue accurately</li>
+                <li>Manual reporting processes consuming 20+ hours per week</li>
+                <li>No clear identification of top-performing sales channels</li>
+                <li>Inability to track performance against targets</li>
+            </ul>
+
+            <!-- Solution -->
+            <h2>Solution Approach</h2>
+            <p>
+                I developed a comprehensive sales analytics solution leveraging modern data tools and methodologies:
+            </p>
+
+            <h3>1. Data Integration</h3>
+            <ul>
+                <li>Connected multiple sales data sources into a unified database</li>
+                <li>Cleaned and validated 12 months of historical data</li>
+                <li>Implemented automated daily data refresh processes</li>
+            </ul>
+
+            <h3>2. Dashboard Design</h3>
+            <ul>
+                <li>Created executive-level KPI overview in Power BI</li>
+                <li>Developed detailed sales channel performance metrics</li>
+                <li>Implemented interactive filters for dynamic analysis</li>
+                <li>Designed mobile-responsive views for on-the-go access</li>
+            </ul>
+
+            <h3>3. Predictive Analytics</h3>
+            <ul>
+                <li>Built time-series forecasting model using Python</li>
+                <li>Incorporated seasonal trend analysis</li>
+                <li>Generated quarterly revenue projections with confidence intervals</li>
+            </ul>
+
+            <div class="case-study-image">
+                📊
+            </div>
+
+            <!-- Results -->
+            <h2>Results & Impact</h2>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-value">92%</div>
+                    <div class="metric-label">Forecast Accuracy</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">50%</div>
+                    <div class="metric-label">Reporting Time Reduced</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">15%</div>
+                    <div class="metric-label">Revenue Growth Identified</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Growth Initiatives Recommended</div>
+                </div>
+            </div>
+
+            <p>
+                The dashboard implementation delivered immediate and substantial business impact:
+            </p>
+            <ul>
+                <li><strong>Improved Decision Making</strong>: Real-time visibility enabled faster, data-driven decisions</li>
+                <li><strong>Accurate Forecasting</strong>: 92% accuracy in quarterly revenue predictions</li>
+                <li><strong>Time Efficiency</strong>: Reduced manual reporting from 20+ hours to 10 hours per week</li>
+                <li><strong>Growth Opportunities</strong>: Identified three new market expansion opportunities</li>
+                <li><strong>Channel Optimization</strong>: Pinpointed top-performing sales channels for resource allocation</li>
+            </ul>
+
+            <!-- Tools & Technologies -->
+            <h2>Tools & Technologies Used</h2>
+            <ul>
+                <li><strong>SQL</strong>: Data extraction and transformation</li>
+                <li><strong>Python</strong>: Data analysis and predictive modeling (Pandas, Scikit-learn)</li>
+                <li><strong>Power BI</strong>: Dashboard design and visualization</li>
+                <li><strong>Excel</strong>: Data validation and supplementary analysis</li>
+            </ul>
+
+            <!-- Key Learnings -->
+            <h2>Key Learnings</h2>
+            <ul>
+                <li>Importance of data quality in forecast accuracy</li>
+                <li>How to effectively communicate complex analytics to non-technical stakeholders</li>
+                <li>Value of automating repetitive analytical tasks</li>
+                <li>Techniques for building reliable predictive models with limited historical data</li>
+            </ul>
+
+            <!-- Conclusion -->
+            <h2>Conclusion</h2>
+            <p>
+                The Sales Performance Dashboard project successfully transformed sales analytics from a reactive, manual process into a proactive, data-driven system. The implementation not only improved operational efficiency but also uncovered strategic insights that drove business growth. This project demonstrates my ability to understand business requirements, design comprehensive solutions, and deliver measurable results through data analytics.
+            </p>
+
+            <div style="margin: 4rem 0; padding: 2rem; background: var(--bg-surface); border-radius: 12px; border-left: 4px solid var(--color-accent);">
+                <h3 style="margin-top: 0;">Ready to see more projects?</h3>
+                <p style="margin-bottom: 1rem;">Explore other case studies and analytical projects in my portfolio.</p>
+                <a href="index.html#projects" class="btn btn-primary">
+                    View All Projects
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 THIANCHAI DEJDEE. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <span class="divider">•</span>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

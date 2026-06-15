@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - THIANCHAI DEJDEE | Data Analyst Intern</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .resume-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 80px;
+            margin-bottom: 3rem;
+        }
+
+        .resume-header-content {
+            text-align: center;
+        }
+
+        .resume-header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-subtitle {
+            color: var(--color-accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .resume-download {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .resume-section {
+            margin-bottom: 3rem;
+        }
+
+        .resume-section-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-accent);
+            display: inline-block;
+        }
+
+        .resume-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .resume-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .resume-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .resume-item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .resume-item-subtitle {
+            color: var(--color-accent);
+            font-size: 0.95rem;
+        }
+
+        .resume-item-date {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .resume-item-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0.75rem 0;
+        }
+
+        .resume-item ul {
+            margin: 0.75rem 0;
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .resume-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .skill-category {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .skill-category h4 {
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        .gpa-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid var(--color-accent-secondary);
+            color: var(--color-accent-secondary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+
+        @media print {
+            .navbar, .theme-toggle, .print-button, .footer, .resume-download {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-item-header {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .print-button {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">THIANCHAI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="resume.html" class="nav-link active">Resume</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Resume Header -->
+    <div class="resume-header">
+        <div class="resume-header-content">
+            <h1>THIANCHAI DEJDEE</h1>
+            <p class="resume-subtitle">Data Analyst Intern</p>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Bangkok, Thailand • contact@thianchai.com • +1 (234) 567-890
+            </p>
+            <div class="gpa-badge">
+                GPA: 3.89
+            </div>
+            <div class="resume-download">
+                <a href="#" class="btn btn-primary" onclick="window.print()">
+                    <i class="fas fa-print"></i>
+                    Print Resume
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Content -->
+    <div class="resume-container">
+        <!-- Professional Summary -->
+        <div class="resume-section">
+            <h2 class="resume-section-title">Professional Summary</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                Results-driven Data Analyst Intern with strong analytical foundation and passion for transforming complex data into actionable insights. Proficient in data analysis tools including Excel, SQL, Python, and business intelligence platforms. Demonstrated ability to develop comprehensive dashboards, conduct statistical analysis, and present findings to stakeholders. Seeking an internship opportunity to leverage technical skills and analytical mindset to drive data-informed decision-making.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-section">
+            <h2 class="resume-section-title">Education</h2>
+            
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">Bachelor of Digital Business Technology</div>
+                        <div class="resume-item-subtitle">University Name</div>
+                    </div>
+                    <div class="resume-item-date">2023 - 2026</div>
+                </div>
+                <div class="resume-item-description">
+                    <strong>GPA: 3.89/4.0</strong>
+                </div>
+                <ul>
+                    <li>Focus: Data Analytics, Business Intelligence, Digital Strategy</li>
+                    <li>Relevant Coursework: Data Analysis, Business Analytics, Database Design, Statistics</li>
+                    <li>Academic Honors: Dean's List, Merit Scholar</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="resume-section">
+            <h2 class="resume-section-title">Experience</h2>
+            
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">Data Analysis Research Project</div>
+                        <div class="resume-item-subtitle">Academic Research</div>
+                    </div>
+                    <div class="resume-item-date">2025 - Present</div>
+                </div>
+                <div class="resume-item-description">
+                    Conducted independent research analyzing customer behavior patterns and market trends using advanced statistical methodologies.
+                </div>
+                <ul>
+                    <li>Analyzed dataset of 10,000+ records using Python and SQL</li>
+                    <li>Identified 5 significant behavioral patterns impacting business strategy</li>
+                    <li>Presented findings to faculty and peers with supporting visualizations</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">Business Analytics Case Study</div>
+                        <div class="resume-item-subtitle">Academic Project</div>
+                    </div>
+                    <div class="resume-item-date">2024 - 2025</div>
+                </div>
+                <div class="resume-item-description">
+                    Developed comprehensive business analytics solution for real-world company challenge.
+                </div>
+                <ul>
+                    <li>Built interactive dashboards in Excel and Power BI</li>
+                    <li>Conducted competitive analysis using industry data</li>
+                    <li>Delivered strategic recommendations resulting in estimated 15% efficiency gain</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="resume-section">
+            <h2 class="resume-section-title">Featured Projects</h2>
+            
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">KPI Dashboard Analysis</div>
+                        <div class="resume-item-subtitle">Business Intelligence</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Designed comprehensive KPI tracking system monitoring 20+ metrics</li>
+                    <li>Achieved 30% improvement in data accuracy through validation processes</li>
+                    <li>Tools: Excel, Looker Studio, Python</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">Sales Performance Forecasting</div>
+                        <div class="resume-item-subtitle">Predictive Analytics</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Built time-series forecasting model with 92% accuracy</li>
+                    <li>Implemented automated reporting reducing manual work by 50%</li>
+                    <li>Tools: Python (Pandas, Scikit-learn), Power BI</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">Customer Segmentation Analysis</div>
+                        <div class="resume-item-subtitle">Data Analytics</div>
+                    </div>
+                </div>
+                <ul>
+                    <li>Segmented customer base into 5 distinct groups using clustering analysis</li>
+                    <li>Identified high-value customer characteristics improving targeting</li>
+                    <li>Tools: SQL, Python, Google Analytics 4</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="resume-section">
+            <h2 class="resume-section-title">Skills</h2>
+            
+            <div class="skills-overview">
+                <div class="skill-category">
+                    <h4>Data Analysis</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">EDA</span>
+                        <span class="skill-tag">Data Cleaning</span>
+                        <span class="skill-tag">Reporting</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Tools & Platforms</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Analytics Platforms</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Google Analytics 4</span>
+                        <span class="skill-tag">Looker Studio</span>
+                        <span class="skill-tag">Google Sheets</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Database Querying</span>
+                        <span class="skill-tag">Dashboard Design</span>
+                        <span class="skill-tag">Visualization</span>
+                        <span class="skill-tag">Problem-Solving</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Soft Skills</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Presentation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Tools & Technologies</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">ChatGPT</span>
+                        <span class="skill-tag">Claude AI</span>
+                        <span class="skill-tag">Gemini</span>
+                        <span class="skill-tag">Perplexity AI</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="resume-section">
+            <h2 class="resume-section-title">Certifications & Training</h2>
+            
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">Google Analytics Certification</div>
+                        <div class="resume-item-subtitle">Google</div>
+                    </div>
+                    <div class="resume-item-date">2024</div>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">Data Analysis with Python</div>
+                        <div class="resume-item-subtitle">Online Course</div>
+                    </div>
+                    <div class="resume-item-date">2024</div>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div>
+                        <div class="resume-item-title">Advanced Excel for Analytics</div>
+                        <div class="resume-item-subtitle">Professional Development</div>
+                    </div>
+                    <div class="resume-item-date">2023</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="resume-section">
+            <h2 class="resume-section-title">Languages</h2>
+            <ul>
+                <li><strong>Thai:</strong> Native</li>
+                <li><strong>English:</strong> Fluent (Professional Working)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <button class="print-button btn btn-primary" onclick="window.print()" title="Print Resume">
+        <i class="fas fa-print"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 THIANCHAI DEJDEE. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <span class="divider">•</span>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
