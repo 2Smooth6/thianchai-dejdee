@@ -672,7 +672,7 @@ a:hover {
     top: 0;
 }
 
-.timeline-content h4 {
+.timeline-content h3 {
     color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
@@ -994,7 +994,7 @@ a:hover {
     padding: 2rem;
 }
 
-.contact-info h3 {
+.contact-info h2 {
     margin-bottom: 2rem;
 }
 
