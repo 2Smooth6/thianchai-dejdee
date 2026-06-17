@@ -20,7 +20,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
+        working-directory: ./blog-api
         run: docker build -t thianthian/blog-api:latest .
 
       - name: Push Docker image
+        working-directory: ./blog-api
         run: docker push thianthian/blog-api:latest
