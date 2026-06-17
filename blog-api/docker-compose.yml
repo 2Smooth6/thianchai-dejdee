@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  db:
+    image: mongo:latest
+    container_name: blog-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data_moved/db:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.runCommand({ping: 1})"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - api_network
+    restart: always
+
+  api:
+    build: .
+    container_name: blog-api
+    expose:
+      - "3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://db:27017/my_blog_db
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - api_network
+    restart: always
+
+  nginx:
+    image: nginx:alpine
+    container_name: blog-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+    depends_on:
+      - api
+    networks:
+      - api_network
+    restart: always
+
+networks:
+  api_network:
+    name: api_network

@@ -1,5 +1,7 @@
 node_modules
+.git
 .env
+npm-debug.log
 
 data_new/
 data_moved/

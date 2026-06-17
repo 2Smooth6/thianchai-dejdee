@@ -144,3 +144,43 @@ curl http://localhost:3000/analytics/top-posts
 ```powershell
 Invoke-RestMethod -Uri "http://localhost:3000/analytics/top-posts" -Method Get
 ```
+
+---
+
+## Running with Docker (Recommended)
+
+You can run the entire system (API + MongoDB database) locally using Docker Compose in a single command.
+
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+
+### How to Run
+
+1. Navigate to the `blog-api` directory:
+   ```bash
+   cd blog-api
+   ```
+
+2. Start the services:
+   ```bash
+   docker compose up --build
+   ```
+
+   This command will:
+   - Build the custom API Docker image.
+   - Start the MongoDB container and run its health check.
+   - Start the API container once the database is fully healthy and ready.
+   - Bind the API to `http://localhost:3000`.
+
+3. Stop the services:
+   ```bash
+   docker compose down
+   ```
+   To also delete the persistent database volume, use:
+   ```bash
+   docker compose down -v
+   ```
+
+### Troubleshooting
+- **Port Conflict (3000 or 27017 already in use)**: Ensure no local processes (like a locally running Node.js server or local MongoDB service) are using these ports before running `docker compose up`.
+- **Database Connection Issues**: The API container depends on the database's healthcheck. If it fails, check the logs of the `db` service container.
