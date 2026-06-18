@@ -61,8 +61,10 @@ jobs:
             DOCKER_IMAGE=${{ env.DOCKER_IMAGE }} IMAGE_TAG=${{ steps.version.outputs.tag }} docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --no-build
 
       - name: Webhook alert success
-        if: ${{ success() && secrets.DEPLOY_WEBHOOK_URL != '' }}
+        if: ${{ success() && env.DEPLOY_WEBHOOK_URL != '' }}
+        env:
+          DEPLOY_WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
         run: |
-          curl -X POST "${{ secrets.DEPLOY_WEBHOOK_URL }}" \
+          curl -X POST "$DEPLOY_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
             -d '{"status":"success","image":"${{ env.DOCKER_IMAGE }}:${{ steps.version.outputs.tag }}","branch":"main","commit":"${{ github.sha }}"}'
